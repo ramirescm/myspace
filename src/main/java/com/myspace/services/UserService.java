@@ -27,4 +27,20 @@ public class UserService {
     public User insert(User user) {
         return userRepository.insert(user);
     }
+
+    public void delete(String id) {
+        findById(id);
+        userRepository.deleteById(id);
+    }
+
+    public User update(User user) {
+        var updating = findById(user.getId());
+        updateData(updating, user);
+        return userRepository.save(updating);
+    }
+
+    private void updateData(User user, User obj) {
+        user.setEmail(obj.getEmail());
+        user.setName(obj.getName());
+    }
 }
