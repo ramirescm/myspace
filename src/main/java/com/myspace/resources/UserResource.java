@@ -1,6 +1,7 @@
 package com.myspace.resources;
 
 import com.myspace.dtos.UserDTO;
+import com.myspace.entities.Post;
 import com.myspace.entities.User;
 import com.myspace.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,5 +58,11 @@ public class UserResource {
         user.setId(id);
         user = userService.update(user);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/{id}/posts")
+    public ResponseEntity<List<Post>> findAllPosts(@PathVariable String id){
+        var user = userService.findById(id);
+        return ResponseEntity.ok().body(user.getPosts());
     }
 }
