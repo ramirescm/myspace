@@ -23,4 +23,8 @@ public class UserService {
         return userRepository.findById(id)
                 .orElseThrow(() -> new ObjectNotFoundException("User not found"));
     }
+
+    public User insert(User user) {
+        return userRepository.insert(user);
+    }
 }
