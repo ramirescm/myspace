@@ -2,6 +2,7 @@ package com.myspace.repositories;
 
 import com.myspace.entities.Post;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,4 +11,8 @@ import java.util.List;
 public interface PostRepository extends MongoRepository<Post, String> {
 
     List<Post> findByTitleContaining(String title);
+
+    // ?0 first, ?1 second... parameters, option i to ignore case
+    @Query("{ 'title': { $regex: ?0, $options: 'i' } }")
+    List<Post> findByTitle(String title);
 }
