@@ -40,6 +40,13 @@ public class Seed implements CommandLineRunner {
         var p1 = new Post(null, sdf.parse("16/03/2023"), "Partiu Viajem", "Indo viajar Londres", new AuthorDTO(maria));
         var p2 = new Post(null, sdf.parse("17/03/2023"), "Partiu Viajem", "Indo viajar Paris", new AuthorDTO(maria));
 
+        var p3 = new Post(null, sdf.parse("17/03/2023"), "Franca", "Indo viajar Franca", new AuthorDTO(maria));
+        var p4 = new Post(null, sdf.parse("17/03/2023"), "Canada", "Indo viajar Canada", new AuthorDTO(maria));
+        var p5 = new Post(null, sdf.parse("17/03/2023"), "Arraial", "Indo viajar Arrail", new AuthorDTO(maria));
+        var p6 = new Post(null, sdf.parse("17/03/2023"), "Cabo Frio", "Indo viajar Paris", new AuthorDTO(maria));
+        var p7 = new Post(null, sdf.parse("17/03/2023"), "Farol", "Indo viajar Farol", new AuthorDTO(maria));
+        var p8 = new Post(null, sdf.parse("17/03/2023"), "Torres", "Indo viajar Torres", new AuthorDTO(maria));
+
         var c1 = new CommentDTO("Boa viagem", sdf.parse("15/03/2023"), new AuthorDTO(alex));
         var c2 = new CommentDTO("Sucesso", sdf.parse("16/03/2023"), new AuthorDTO(bob));
         var c3 = new CommentDTO("Have a nice day!!", sdf.parse("17/03/2023"), new AuthorDTO(alex));
@@ -48,6 +55,7 @@ public class Seed implements CommandLineRunner {
         p2.getComments().addAll(Arrays.asList(c3));
 
         postRepository.saveAll(Arrays.asList(p1, p2));
+        postRepository.saveAll(Arrays.asList(p3, p4, p5, p6, p7, p8));
 
         maria.getPosts().addAll(Arrays.asList(p1, p2));
         userRepository.save(maria);
