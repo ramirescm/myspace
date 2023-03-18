@@ -38,7 +38,7 @@ public class PostResource {
             ) {
         text = URL.decodeParam(text);
         var dateMin = URL.convertDate(minDate, new Date());
-        var dateMax = URL.convertDate(maxDate, new Date(1L));
+        var dateMax = URL.convertDate(maxDate, new Date());
         var posts = postService.fullSearch(text, dateMin, dateMax);
         return ResponseEntity.ok().body(posts);
     }
