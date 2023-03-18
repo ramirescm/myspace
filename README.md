@@ -43,3 +43,6 @@ git push ....
 [ ] Add docker suport to build image
 ```
 
+# Problems
+- simple way to change base path configure on YAML, for example i want to set /api
+
