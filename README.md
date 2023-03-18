@@ -4,7 +4,11 @@ Social media to share posts, allow add comments and users.
 ### Spring Boot Reference Documentation
 
 ```
+# doc spring base
 https://docs.spring.io/spring-boot/docs/current/reference/html/index.html
+
+# doc aplication.properties
+https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.actuator.management.endpoints.web.base-path
 ```
 
 ### Up database
@@ -19,6 +23,7 @@ Springboot
 JUnit
 Mockiton
 MongoDB
+Docker
 ```
 
 # Swagger
