@@ -15,6 +15,14 @@ Mockiton
 MongoDB
 ```
 
+# Swagger
+
+Access documentation API
+```
+http://localhost:8080/swagger-ui/index.html
+http://localhost:8080/v3/api-docs
+```
+
 ### Initializing a repo
 
 ```
@@ -33,5 +41,5 @@ git push ....
 [ ] Implement tests, container etc
 [ ] Use faker to mock data
 [ ] Add docker suport to build image
-[ ] Add CORS support
 ```
+

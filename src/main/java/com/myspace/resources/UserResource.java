@@ -4,6 +4,8 @@ import com.myspace.dtos.UserDTO;
 import com.myspace.entities.Post;
 import com.myspace.entities.User;
 import com.myspace.services.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,8 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping(value = "/users")
 public class UserResource {
+
+    private final Logger LOG = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private UserService userService;
