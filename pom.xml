@@ -73,7 +73,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!-- we need to put this to allow step in construction of docker imagem to reduce image size -->
+				<!-- we need to put this to allow step in construction of docker imagem to reduce size image -->
 				<configuration>
 					<layers>
 						<enabled>true</enabled>
