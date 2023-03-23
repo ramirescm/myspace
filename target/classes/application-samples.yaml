@@ -1,0 +1,18 @@
+# if need to change server port
+server:
+  port: 8080
+# flexibility config cors
+cors:
+  originPatterns: http://localhost:3000,http://localhost:8080
+# config
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:example@127.0.0.1:27017/myspace?authSource=admin
+    # this config doesn't work basePath or base-path
+    rest:
+      base-path: /api
+spring-doc:
+  pathsToMatch: /api/**
+  swagger-ui:
+    use-root-path: true

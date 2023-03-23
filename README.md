@@ -54,6 +54,13 @@ git push ....
 [ ] Add docker suport to build image
 ```
 
+# Build image
+
+base on https://www.docker.com/blog/9-tips-for-containerizing-your-spring-boot-code/
+
+java -jar target/myspace-0-0.1-SNAOSHOT.jar
+check on browser http://localhost:8080/swagger-ui/index.html
+
 # Problems
 - simple way to change base path configure on YAML, for example i want to set /api
 
