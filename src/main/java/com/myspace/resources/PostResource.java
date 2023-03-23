@@ -1,5 +1,6 @@
 package com.myspace.resources;
 
+import com.myspace.dtos.PostDtoWithAnotation;
 import com.myspace.entities.Post;
 import com.myspace.resources.util.URL;
 import com.myspace.services.PostService;
@@ -12,8 +13,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/api/posts")
@@ -32,12 +35,13 @@ public class PostResource {
     }
 
     @GetMapping("/paged")
-    public ResponseEntity<Page<Post>> findPaged(@RequestParam(defaultValue = "1") int page,
+    public ResponseEntity<Page<PostDtoWithAnotation>> findPaged(@RequestParam(defaultValue = "1") int page,
                                                 @RequestParam(defaultValue = "5") int pageSize,
                                                 @RequestParam(value = "title", defaultValue = "") String title) {
         Pageable pageable = PageRequest.of(page - 1, pageSize);
         title = URL.decodeParam(title);
-        var posts = postService.findByTitleV2(title, pageable);
+        var posts = postService.findByTitleV2(title, pageable)
+                .map(PostDtoWithAnotation::ofEntity);
         return ResponseEntity.ok().body(posts);
     }
 
